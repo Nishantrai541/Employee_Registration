@@ -23,7 +23,7 @@ import com.Employee.Registration.EmployeeRegistration.Services.EmployeeRegistrat
 @RequestMapping("api/employee")
 public class EmployeeController {
 
-	private EmployeeRegistrationService employeeService;
+	private final EmployeeRegistrationService employeeService;
 	
 	
 	public EmployeeController(EmployeeRegistrationService employeeService) {

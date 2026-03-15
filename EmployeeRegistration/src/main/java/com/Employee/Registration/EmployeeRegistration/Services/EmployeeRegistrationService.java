@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ import com.Employee.Registration.EmployeeRegistration.Repository.EmployeeRepo;
 public class EmployeeRegistrationService {
 
 
-	private EmployeeRepo employeeRepo;
+	private final EmployeeRepo employeeRepo;
 	
 	public EmployeeRegistrationService(EmployeeRepo employeeRepo) {
 		super();
