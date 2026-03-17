@@ -31,6 +31,7 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 
+	//Controller for employee Registration
 	@PostMapping("/add")
 	public ResponseEntity<EmployeeModel> addEmployee(@RequestBody EmployeeRegistrationDAO employeeDetails) throws Exception {
 		
@@ -38,6 +39,19 @@ public class EmployeeController {
 		
 	}
 	
+	
+	//Controller for get the list of employee
+	@GetMapping("/findAll")
+	public ResponseEntity<List<EmployeeModel>> getAllEmployee() throws Exception{
+		
+		//Integer i= Integer.valueOf(id);
+		
+		return employeeService.getAllEmployee();
+		
+	}
+	
+	
+	//Controller for get Employee by ID
 	@GetMapping("/getById/{id}")
 	public ResponseEntity<EmployeeModel> getEmployeeById(@PathVariable Long id) throws Exception{
 		
@@ -47,6 +61,7 @@ public class EmployeeController {
 		
 	}
 	
+	//controller for get employee by name
 	@GetMapping("/getByName/{name}")
 	public ResponseEntity<List<EmployeeModel>> getEmployeeByName(@PathVariable String name) throws Exception {
 		
@@ -54,6 +69,8 @@ public class EmployeeController {
 		
 	}
 	
+	
+	//Controller for update employee details by id 
 	@PutMapping("/updateById")
 	public ResponseEntity<EmployeeModel> updateEmployeeById(@RequestBody EmployeeUpdateDAO updateEmployee) throws Exception {
 		
@@ -61,6 +78,8 @@ public class EmployeeController {
 		
 	}
 	
+	
+	//controller for delete employee by id
 	@DeleteMapping("/deleteEmployee/{id}")
 	public ResponseEntity<String> deleteEmployeeById(@PathVariable Long id) throws Exception{
 		
